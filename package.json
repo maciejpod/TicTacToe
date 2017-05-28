@@ -1,0 +1,23 @@
+{
+  "name": "tic_tac_toe",
+  "version": "1.0.0",
+  "description": "Tic tac toe project",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha --opts tests/mocha.opts"
+  },
+  "devDependencies": {
+    "chai": "3.5.0",
+    "mocha": "3.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maciejpod/TicTacToe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maciejpod/TicTacToe/issues"
+  },
+  "homepage": "https://github.com/maciejpod/TicTacToe#readme"
+}
