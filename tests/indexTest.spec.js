@@ -34,4 +34,19 @@ describe('Select field tests', () => {
         instance.play(1, 1);
         expect(() => {instance.play(1, 1)}).to.throw('Selected field is occupied by enemy!');
     });
+
+    it('Player \'x\' starts', () => {
+        expect(instance.currentPlayer).to.eql('x');
+    });
+
+    it('Player \'o\' should have his turn after 1st move', () => {
+        instance.play(1, 2);
+        expect(instance.currentPlayer).to.eql('o');
+    });
+
+    it('Player \'x\' should have his turn after 2nd move', () => {
+        instance.play(1, 2);
+        instance.play(3, 1);
+        expect(instance.currentPlayer).to.eql('x');
+    });
 });

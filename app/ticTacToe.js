@@ -31,6 +31,15 @@ class TicTacToe {
         }
 
         this.fields[(x - 1) * 3 + (y - 1)] = this.fields.currentPlayer;
+
+        this.nextPlayer();
+    }
+
+    nextPlayer() {
+        if (this.currentPlayer === 'x')
+            this.currentPlayer = 'o';
+        else
+            this.currentPlayer = 'x';
     }
 }
 
