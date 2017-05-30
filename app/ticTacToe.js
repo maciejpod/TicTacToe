@@ -23,14 +23,38 @@ class TicTacToe {
         this.checkAxis(x, 'X');
         this.checkAxis(y, 'Y');
         this.selectField(x, y);
+        for (var i = 0; i < 3; i++) {
+            if (this.fields[i] === this.currentPlayer &&
+                this.fields[3 + i] === this.currentPlayer &&
+                this.fields[3*2 + i] === this.currentPlayer) {
+                        return this.currentPlayer + " won the game!";
+            }
+            if (this.fields[i * 3 + 0] === this.currentPlayer &&
+                this.fields[i * 3 + 1] === this.currentPlayer &&
+                this.fields[i * 3 + 2] === this.currentPlayer) {
+                return this.currentPlayer + " won the game!";
+            }
+        }
+        if (this.fields[2] === this.currentPlayer &&
+            this.fields[4] === this.currentPlayer &&
+            this.fields[6] === this.currentPlayer) {
+            return this.currentPlayer + " won the game!";
+        }
+
+        if (this.fields[0] === this.currentPlayer &&
+            this.fields[4] === this.currentPlayer &&
+            this.fields[8] === this.currentPlayer) {
+            return this.currentPlayer + " won the game!";
+        }
         this.nextPlayer();
+        return "Keep playing!";
     }
 
-    selectField(x , y) {
+    selectField(x, y) {
         if (this.fields[(x - 1) * 3 + (y - 1)] !== '') {
             throw new Error('Selected field is occupied by enemy!')
         }
-        this.fields[(x - 1) * 3 + (y - 1)] = this.fields.currentPlayer;
+        this.fields[(x - 1) * 3 + (y - 1)] = this.currentPlayer;
     }
 
     nextPlayer() {
