@@ -2,6 +2,7 @@
   "name": "tic_tac_toe",
   "version": "1.0.0",
   "description": "Tic tac toe project",
+  "main": "lib/ticTacToe.js",
   "scripts": {
     "test": "node_modules/.bin/mocha --opts tests/mocha.opts"
   },
